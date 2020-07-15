@@ -17,5 +17,19 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
-
+<fl-demo>
+  开始，我是外部嵌入的内容，
+  <div ngProjectAs="header">
+    <header>
+      我是外部嵌入的内容，我在header中
+    </header>
+  </div>
+  <div class="demo2">
+    我是外部嵌入的内容，我所在div的class为"demo2"
+  </div>
+  <div name="demo3">
+    我是外部嵌入的内容demo，我所在div的属性name为"demo3"
+  </div>
+  结束
+</fl-demo>
 <router-outlet></router-outlet>
