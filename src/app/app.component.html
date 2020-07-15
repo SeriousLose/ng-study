@@ -31,5 +31,13 @@
     我是外部嵌入的内容demo，我所在div的属性name为"demo3"
   </div>
   结束
+  <!-- <ng-template ngTemplateOutlet="angular">
+    <div>11111</div>
+  </ng-template> -->
+
+  <ng-template let-username="name">
+    <div> my name issdffdaffaf {{username}}</div>
+  </ng-template>
+
 </fl-demo>
 <router-outlet></router-outlet>

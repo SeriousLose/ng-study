@@ -1,17 +1,35 @@
 <div class="demo">
-	<h2>
-		demo-component - 可嵌入外部内容的组件
-	</h2>
-	<div class="content">
-		<ng-content></ng-content>
+
+  <h2 (click)="aa()">
+    demo-component - 可嵌入外部内容的组件
+  </h2>
+  <div class="content">
+    <ng-content></ng-content>
   </div>
-	<div class="content blue">
-		<ng-content select="header"></ng-content>
-	</div>
-	<div class="content red">
-		<ng-content select=".demo2"></ng-content>
-	</div>
-	<div class="content green">
-		<ng-content select="[name=demo3]"></ng-content>
+  <div class="content blue">
+    <ng-content select="header"></ng-content>
   </div>
+  <div class="content red">
+    <ng-content select=".demo2"></ng-content>
+  </div>
+  <div class="content green">
+    <ng-content select="[name=demo3]"></ng-content>
+  </div>
+  <div class="content red">
+    <!-- <ng-container [ngTemplateOutlet]="template"></ng-container> -->
+    <!-- <ng-container [ngTemplateOutlet]="angular[0]">
+    </ng-container> -->
+  </div>
+  <!-- <div>
+    <ng-container *ngTemplateOutlet="angular[0]">
+    </ng-container>
+  </div> -->
+  <div>
+    <ng-container *ngTemplateOutlet="angular && angular.first">
+    </ng-container>
+  </div>
+
+
+
+
 </div>

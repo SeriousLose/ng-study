@@ -1,4 +1,6 @@
-import { Component, OnInit, ContentChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ContentChild, TemplateRef, ContentChildren, QueryList } from '@angular/core';
+
+
 
 @Component({
   selector: 'fl-demo',
@@ -7,11 +9,19 @@ import { Component, OnInit, ContentChild, TemplateRef } from '@angular/core';
 })
 export class DemoComponent implements OnInit {
 
-
+  @ContentChildren(TemplateRef) angular: QueryList<any>;
+  // @ContentChild() childOne: any;
 
   constructor() { }
 
   ngOnInit() {
+
   }
+  aa(){
+    console.log(this.angular);
+  }
+  name = "鲁王";
+  ctx = {name: this.name};
+
 
 }
