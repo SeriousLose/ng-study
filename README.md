@@ -1,2 +1,4 @@
 # ng-study
-angular8的学习
+angular的学习项目
+
+
