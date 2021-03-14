@@ -16,17 +16,18 @@ const routes: Routes = [
   {
     path: 'orders',
     loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule),
-    data: { preload: true }
+    // data: { preload: true }
   },
   {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
-  },
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true, preloadingStrategy: SelectivePreloadingStrategyService })],
+  // imports: [RouterModule.forChild(routes, { enableTracing: true, preloadingStrategy: SelectivePreloadingStrategyService })],
+  imports: [RouterModule.forChild(routes)],
   providers: [SelectivePreloadingStrategyService],
   exports: [RouterModule]
 })
