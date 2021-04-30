@@ -13,7 +13,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AbcComponent implements OnInit, OnChanges {
-  @Input() shuru = 0;
+  @Input() shuru = {shuru: 0};
 
   constructor() {}
 

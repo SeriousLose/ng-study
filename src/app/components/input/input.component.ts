@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  shuru = 1;
+  shuru = {
+    shuru: 1
+  };
   constructor() {
     setInterval(() => {
-      this.shuru++;
+      this.shuru.shuru++;
     }, 1111);
   }
 
