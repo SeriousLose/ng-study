@@ -30,4 +30,8 @@ export class AbcComponent implements OnInit, OnChanges {
       );
     }
   }
+
+  click() {
+    console.log('电力');
+  }
 }
