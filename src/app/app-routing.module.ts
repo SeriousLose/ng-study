@@ -1,27 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { TestRoutingComponent } from '';
+import { TestRoutingComponent } from './components/test-routing/test-routing.component';
 import { TestComponent } from './components/test/test.component';
-
 
 const routes: Routes = [
   {
     path: 'test',
-    component: TestComponent
+    component: TestComponent,
   },
   {
     path: 'testRouting',
-    loadChildren: './components/test-routing/test-routing.component',
-    // component: TestRoutingComponent,
+    component: TestRoutingComponent,
     data: {
-      reuse: true
-    }
-  }
+      key: 'TestRoutingComponent',
+    },
+  },
+  {
+    path: 'feature3',
+    loadChildren: () => import('./feature3/feature3.module').then((m) => m.Feature3Module),
+
+  },
 ];
 
 @NgModule({
   // imports: [RouterModule.forRoot(routes, {useHash: true})], // 路由前带 # 号
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
