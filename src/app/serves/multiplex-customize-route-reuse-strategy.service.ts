@@ -20,6 +20,7 @@ export class MultiplexCustomizeRouteReuseStrategyService implements RouteReuseSt
    * @return: boolean true-允许 false-禁止
    */
   shouldDetach(route: ActivatedRouteSnapshot): boolean {
+    console.log(1, 'shouldDetach', route);
     return route.data.key ? true : false;
   }
 
@@ -29,6 +30,8 @@ export class MultiplexCustomizeRouteReuseStrategyService implements RouteReuseSt
    * path等同RouterModule.forRoot中的配置
    */
   store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {
+    console.log(2, 'store', route);
+
     this._cacheRouters[route.data.key] = { snapshot: route, handle };
   }
 
@@ -38,6 +41,8 @@ export class MultiplexCustomizeRouteReuseStrategyService implements RouteReuseSt
    * @return:boolean true-允许 false-禁止
    */
   shouldAttach(route: ActivatedRouteSnapshot): boolean {
+    console.log(3, 'shouldAttach', route);
+
     return !!route.routeConfig && !!this._cacheRouters[route.data.key];
   }
 
@@ -47,6 +52,7 @@ export class MultiplexCustomizeRouteReuseStrategyService implements RouteReuseSt
    * @return:若无则返回null
    */
   retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
+    console.log(4, 'retrieve', route);
     if (!route.routeConfig || !this._cacheRouters[route.data.key]) {
       return null;
     }
@@ -61,6 +67,8 @@ export class MultiplexCustomizeRouteReuseStrategyService implements RouteReuseSt
     future: ActivatedRouteSnapshot,
     curr: ActivatedRouteSnapshot
   ): boolean {
+    console.log(5, 'shouldReuseRoute', future);
+
     return future.routeConfig === curr.routeConfig;
   }
 }
