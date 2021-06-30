@@ -58,6 +58,7 @@ export class PersonComponent implements OnInit {
     <div>
       <a class="btn btn-success" [routerLink]="['../edit']">Edit</a>
     </div>
+    <input/>
   `,
 })
 export class ViewPersonComponent implements OnInit {
