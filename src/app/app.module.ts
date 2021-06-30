@@ -5,8 +5,8 @@ import { RouteReuseStrategy } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 // import { CustomReuseStrategy } from 'src/custom-reuse-strategy';
 import { AppComponent } from './app.component';
-import { CustomReuseStrategy } from './custom-reuse-strategy';
 import { DataService } from './data.service';
+import { ZwRouteReuseStrategy } from './extension-route-reuse-strategy';
 import { EditPersonComponent, PersonComponent, ViewPersonComponent } from './person';
 import { SearchComponent } from './search';
 
@@ -26,7 +26,7 @@ import { SearchComponent } from './search';
   bootstrap: [AppComponent],
   providers: [
     DataService,
-    { provide: RouteReuseStrategy, useClass: CustomReuseStrategy },
+    { provide: RouteReuseStrategy, useClass: ZwRouteReuseStrategy },
   ],
 })
 export class AppModule {}
