@@ -1,5 +1,5 @@
 import { Component, Injectable, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService, SearchResultModel } from './data.service';
 
 @Injectable()
@@ -16,6 +16,7 @@ export class PersonService {
       </div>
       <div class="panel-footer">
         <a class="btn btn-default" [routerLink]="['../../search']">Back</a>
+        <button (click)="toBack()">Back</button>
       </div>
     </div>
   `,
@@ -26,6 +27,7 @@ export class PersonComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private data: DataService,
     private personService: PersonService
   ) {}
@@ -38,6 +40,12 @@ export class PersonComponent implements OnInit {
       return searchResult.id === id;
     })[0];
     this.person = this.personService.selectedPerson;
+  }
+  toBack() {
+    setTimeout(() => {
+      this.router.navigate(['../../search']);
+    }, 2000);
+
   }
 }
 
@@ -57,6 +65,7 @@ export class PersonComponent implements OnInit {
     </div>
     <div>
       <a class="btn btn-success" [routerLink]="['../edit']">Edit</a>
+      <button (click)="toBack()">Edit</button>
     </div>
     <input/>
   `,
@@ -65,10 +74,13 @@ export class ViewPersonComponent implements OnInit {
   @Input()
   public person: SearchResultModel;
 
-  constructor(private personService: PersonService) {}
+  constructor(private personService: PersonService, private router: Router ) {}
 
   ngOnInit() {
     this.person = this.personService.selectedPerson;
+  }
+  toBack() {
+    this.router.navigate(['../edit']);
   }
 }
 
