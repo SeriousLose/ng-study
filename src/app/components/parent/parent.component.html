@@ -1,2 +1,3 @@
 <p>parent works!</p>
-<app-child [content]="num"></app-child>
+<app-child (changeNumber)="numberIChange($event)"></app-child>
+<div>{{num}}</div>

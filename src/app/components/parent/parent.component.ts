@@ -6,13 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.less'],
 })
 export class ParentComponent implements OnInit {
-  public num = 1;
 
   constructor() {}
+  public num = 0;
 
   ngOnInit() {
-    setInterval(() => {
-      this.num++;
-    }, 1000);
+  }
+
+  numberIChange(i:number){
+      this.num = i;
   }
 }
