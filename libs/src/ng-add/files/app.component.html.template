@@ -1,0 +1,4 @@
+<div class="my-app">
+  <% if (defaultLanguage === 'zh-cn') { %>你好，Angular Schematics!<% } else { %>Hello, My First Angular Schematics!<% } %>
+  <h1>{{ title }}</h1>
+</div>

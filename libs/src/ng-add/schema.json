@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsDevUI",
+  "title": "DevUI Options Schema",
+  "type": "object",
+  "properties": {
+    "defaultLanguage": {
+      "type": "string",
+      "description": "Choose the default language",
+      "default": "zh-cn",
+      "x-prompt": {
+        "message": "Please choose the default language you want to use: ",
+        "type": "list",
+        "items": [
+          {
+            "value": "zh-cn",
+            "label": "简体中文 (zh-ch)"
+          },
+          {
+            "value": "en-us",
+            "label": "English (en-us)"
+          }
+        ]
+      }
+    },
+    "i18n": {
+      "type": "boolean",
+      "default": true,
+      "description": "Config i18n for the project",
+      "x-prompt": "Would you like to add i18n? (default: Y)"
+    }
+  },
+  "required": []
+}
