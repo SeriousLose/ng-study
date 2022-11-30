@@ -20,4 +20,16 @@
   </li>
 </ul>
 
+
+<h1>MovieApp</h1>
+<p>{{ slogan }}</p>
+<span (click)="aa()">aa</span>
+<button type="button" (click)="changeActorProperties()">
+  Change Actor Properties
+</button>
+<button type="button" (click)="changeActorObject()">
+  Change Actor Object
+</button>
+<app-movie [title]="title" [actor]="actor"></app-movie>`
+
 <router-outlet></router-outlet>
